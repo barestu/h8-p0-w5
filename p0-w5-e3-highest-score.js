@@ -5,7 +5,7 @@ function highestScore (students) {
   
   if (students.length === 0) {
     console.log('');
-    return students;
+    return hasil;
   }
   
   // Menentukan class
@@ -24,7 +24,7 @@ function highestScore (students) {
     var highest = 0;
     for (let j = 0; j < students.length; j++) {
       if (kelas[i] === students[j].class && students[j].score > highest) {
-        highest = students.score;
+        highest = students[j].score;
         objStudents.name = students[j].name;
         objStudents.score = students[j].score;
       }
@@ -37,6 +37,7 @@ function highestScore (students) {
 }
 
 // TEST CASE
+
 console.log(highestScore([
   {
     name: 'Dimitri',
@@ -99,5 +100,39 @@ console.log(highestScore([
 //   tigers: { name: 'Viktor', score: 80 }
 // }
 
+
+console.log(highestScore([
+  {
+    name: 'Dimitri',
+    score: 90,
+    class: 'foxes'
+  },
+  {
+    name: 'Anastasia',
+    score: 100,
+    class: 'foxes'
+  },
+  {
+    name: 'Alexei',
+    score: 85,
+    class: 'wolves'
+  },
+  {
+    name: 'Sergei',
+    score: 74,
+    class: 'foxes'
+  },
+  {
+    name: 'Henlo',
+    score: 78,
+    class: 'wolves'
+  }
+]));
+
+
+// {
+//   foxes: { name: 'Anastasia', score: 100 },
+//   wolves: { name: 'Alexei', score: 85 }
+// }
 
 console.log(highestScore([])); //{}
